@@ -123,7 +123,7 @@ public class Rnr
     }
 
     private static String getEpisodeNumber(String name) {
-        Matcher m = Pattern.compile("\\d{2}").matcher(name.replaceAll("(?i)"+seasonPattern, ""));
+        Matcher m = Pattern.compile("\\d{2}").matcher(name.substring(name.lastIndexOf("\\")).replaceAll("(?i)"+seasonPattern, ""));
         while(m.find())
             return m.group();
         return "";
