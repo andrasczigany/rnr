@@ -63,8 +63,7 @@ public class Rnr
             }
             catch ( IOException e )
             {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                System.out.println("IO exception while deleting temporary files: " + e.getMessage());
             }
     }
 
@@ -83,7 +82,7 @@ public class Rnr
                     .forEach(f -> {
                         try
                         {
-                            Files.copy(fs.getPath(s), Paths.get("tmp-zip/"+s), new CopyOption[]{StandardCopyOption.REPLACE_EXISTING});
+                            Files.copy(fs.getPath(s), Paths.get(TMP+s), new CopyOption[]{StandardCopyOption.REPLACE_EXISTING});
                         }
                         catch ( IOException e )
                         {
